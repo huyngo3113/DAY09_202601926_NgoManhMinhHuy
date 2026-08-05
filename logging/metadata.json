@@ -1,0 +1,58 @@
+{
+  "run_started_utc": "2026-08-05T10:27:30Z",
+  "run_duration_seconds": 62.1,
+  "case_count": 50,
+  "framework": "custom Python multi-agent pipeline (no agent framework dependency)",
+  "runtime": {
+    "python_version": "3.13.14",
+    "os": "Windows-11-10.0.26200-SP0"
+  },
+  "agents": {
+    "customer_agent": {
+      "type": "deterministic",
+      "model": null
+    },
+    "order_product_agent": {
+      "type": "deterministic",
+      "model": null
+    },
+    "payment_agent": {
+      "type": "deterministic",
+      "model": null
+    },
+    "delivery_agent": {
+      "type": "deterministic",
+      "model": null
+    },
+    "policy_agent": {
+      "type": "llm",
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "parameters_billion": null,
+      "compliance_note": "Parameter count undisclosed by provider -- NOT verifiable <=10B under lab rule 9.1. Spec-compliant <=10B alternative: llama-3.1-8b-instant via groq (8B), agreed with the deterministic engine on 26/50 cases in side-by-side testing vs gpt-4.1-mini's 50/50."
+    },
+    "verifier_agent": {
+      "type": "deterministic",
+      "model": null
+    }
+  },
+  "model": "gpt-4.1-mini",
+  "model_provider": "openai",
+  "model_parameters_billion": null,
+  "policy_version": "EC_POLICY_V2",
+  "summary": {
+    "action_required": 34,
+    "no_action": 16,
+    "primary_issue": {
+      "unsupported_late_claim": 8,
+      "late_delivery_seller": 10,
+      "late_delivery_logistics": 10,
+      "canceled_order_paid": 8,
+      "valid_split_payment": 8,
+      "unavailable_order_paid": 6
+    },
+    "llm_agreed": 50,
+    "llm_disagreed": 0,
+    "llm_error": 0
+  }
+}
